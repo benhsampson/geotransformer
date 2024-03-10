@@ -66,21 +66,21 @@ def main():
     output_dict = release_cuda(output_dict)
 
     # get results
-    ref_points = output_dict["ref_points"]
-    src_points = output_dict["src_points"]
+    # ref_points = output_dict["ref_points"]
+    # src_points = output_dict["src_points"]
     estimated_transform = output_dict["estimated_transform"]
     transform = data_dict["transform"]
 
     # visualization
-    ref_pcd = make_open3d_point_cloud(ref_points)
-    ref_pcd.estimate_normals()
-    ref_pcd.paint_uniform_color(get_color("custom_yellow"))
-    src_pcd = make_open3d_point_cloud(src_points)
-    src_pcd.estimate_normals()
-    src_pcd.paint_uniform_color(get_color("custom_blue"))
-    draw_geometries(ref_pcd, src_pcd)
-    src_pcd = src_pcd.transform(estimated_transform)
-    draw_geometries(ref_pcd, src_pcd)
+    # ref_pcd = make_open3d_point_cloud(ref_points)
+    # ref_pcd.estimate_normals()
+    # ref_pcd.paint_uniform_color(get_color("custom_yellow"))
+    # src_pcd = make_open3d_point_cloud(src_points)
+    # src_pcd.estimate_normals()
+    # src_pcd.paint_uniform_color(get_color("custom_blue"))
+    # draw_geometries(ref_pcd, src_pcd)
+    # src_pcd = src_pcd.transform(estimated_transform)
+    # draw_geometries(ref_pcd, src_pcd)
 
     # compute error
     rre, rte = compute_registration_error(transform, estimated_transform)
