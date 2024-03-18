@@ -53,8 +53,8 @@ RUN eval "$(pyenv init -)"
 RUN pyenv install --skip-existing ${PYTHON_VERSION}
 RUN pyenv global ${PYTHON_VERSION}
 
-WORKDIR /user/dev
-ADD ./requirements.txt /user/dev/
+WORKDIR /app
+ADD . /app
 ENV SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True
 RUN python -m pip install -r requirements.txt
 RUN python setup.py build develop

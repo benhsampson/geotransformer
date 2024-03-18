@@ -66,8 +66,8 @@ def main():
     output_dict = release_cuda(output_dict)
 
     # get results
-    # ref_points = output_dict["ref_points"]
-    # src_points = output_dict["src_points"]
+    ref_points = output_dict["ref_points"]
+    src_points = output_dict["src_points"]
     estimated_transform = output_dict["estimated_transform"]
     transform = data_dict["transform"]
 
